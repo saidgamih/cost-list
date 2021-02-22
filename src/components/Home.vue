@@ -81,7 +81,7 @@
       </div>
     </div>
     
-    <h1 class="flex-grow uppercase font-bold text-center mb-3 tracking-widest text-gray-600">Items</h1>
+    <h1 class="flex-grow uppercase font-bold text-center mt-3 mb-2 tracking-widest text-gray-600">Items to buy</h1>
     <div class="px-1"> 
       <div
         v-for="item in items"
