@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen bg-black bg-opacity-50 fixed top-0 left-0 flex items-center justify-center px-2">
+  <div class="w-screen h-screen bg-black bg-opacity-50 fixed top-0 left-0 flex pt-16 items-start justify-center px-2">
       <div v-click-away="closeModal" class="w-full max-w-md bg-white p-4 rounded-lg relative">
           <button @click="closeModal" class="absolute right-1 top-1 px-2 text-gray-400 hover:text-gray-600">
               <i class="fas fa-times"></i>
