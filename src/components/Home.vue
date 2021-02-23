@@ -32,6 +32,8 @@
                 v-model="budget"
                 ref="budget"
                 class="text-3xl font-bold text-gray-600 w-full mr-1"
+                step=".01"
+                pattern="^\d*(\.\d{0,2})?$"
               />
               <button class="w-6 h-6 bg-blue-500 text-white rounded">
                 <i class="fas fa-save"></i>
@@ -105,7 +107,7 @@
       </div>
     </div>
   </div>
-  <modal v-show="showModal" :close="closeModal" :save="saveItem" />
+  <modal v-if="showModal" :close="closeModal" :save="saveItem" />
 </template>
 
 <script>
@@ -133,11 +135,11 @@ export default {
   computed: {
     cost() {
       return this.items.reduce((total, item) => {
-        return total + parseFloat(item.price);
+        return (total + parseFloat(item.price)).toFixed(2);
       }, 0);
     },
     balance() {
-      let balance = parseFloat(this.budget) - parseFloat(this.cost);
+      let balance = (parseFloat(this.budget) - parseFloat(this.cost)).toFixed(2);
       return isNaN(balance) ? 0 : balance;
     },
   },
