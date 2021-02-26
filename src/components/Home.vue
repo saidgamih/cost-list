@@ -126,7 +126,7 @@ export default {
   },
   mounted() {
     if(localStorage.getItem('budget')) {
-      this.budget = localStorage.getItem('budget')
+      this.budget = parseFloat(localStorage.getItem('budget'))
     }
     if(localStorage.getItem('items')) {
       this.items = JSON.parse(localStorage.getItem('items'))
@@ -135,8 +135,8 @@ export default {
   computed: {
     cost() {
       return this.items.reduce((total, item) => {
-        return (total + parseFloat(item.price)).toFixed(2);
-      }, 0);
+        return total + parseFloat(item.price);
+      }, 0).toFixed(2);
     },
     balance() {
       let balance = (parseFloat(this.budget) - parseFloat(this.cost)).toFixed(2);
