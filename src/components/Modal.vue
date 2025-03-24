@@ -64,7 +64,7 @@ export default {
             if(!this.price.toString().trim()) {
                 this.errors.price = "Required field"
             }
-            if(this.price === 0) {
+            if(this.price <== 0) {
                 this.errors.price = "Price must be greater than 0"
             }
 
